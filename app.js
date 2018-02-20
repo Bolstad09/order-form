@@ -1,30 +1,134 @@
 'use strict';
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-Item.names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+// Item.names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
 // function Item(name) {
 //   this.name = name;
 
+
+var btn = document.getElementById('btn');
+var input = document.getElementById('item');
+var tasks = document.getElementById('tasks');
+
+var allpictures = [];
+
+
+function Pictures(name, filepath) {
+  this.name = name;
+  this.filepath = filepath;
+  allpictures.push(this);
+}
+
+
+new Pictures('Bag', 'img/bag.jpg');
+new Pictures('Banana Slicer', 'img/banana.jpg');
+new Pictures('Bathroom', 'img/bathroom.jpg');
+new Pictures('Boots', 'img/boots.jpg');
+new Pictures('Breakfast', 'img/breakfast.jpg');
+new Pictures('Meatball Gum', 'img/bubblegum.jpg');
+new Pictures('Chair', 'img/chair.jpg');
+new Pictures('Cthulhu', 'img/cthulhu.jpg');
+new Pictures('Dog-Duck', 'img/dog-duck.jpg');
+new Pictures('Dragon Meat', 'img/dragon.jpg');
+new Pictures('Pen', 'img/pen.jpg');
+new Pictures('Pet Sweeper', 'img/pet-sweep.jpg');
+new Pictures('Tauntaun', 'img/tauntaun.jpg');
+new Pictures('Unicorn Meat', 'img/unicorn.jpg');
+new Pictures('Usb', 'img/usb.gif');
+new Pictures('Water Can', 'img/water-can.jpg');
+new Pictures('Wine Glass', 'img/wine-glass.jpg');
+
+
+if(localStorage.list) {
+  var list = localStorage.list.split(',');
+} else {
+  var list = [];
+}
+
+
+function save() {
+  list.push(input.value);
+  localStorage.list = list;
+  // meta data so you can see what is happening in action
+  console.log('list arr:', list);
+  console.log('localStorage list:', localStorage.list);
+}
+
+
+function create() {
+  var val = input.value;
+  //creating the item so getting the value of the input
+  var item = document.createElement('li');
+
+  item.appendChild(document.createTextNode(val));
+  //need to take our tasks which is our ul and append child with the added li we just created
+  tasks.appendChild(item);
+  //each time you press enter you get a new empty value to enter a new val
+  input.value = '';
+}
+
+function load() {
+  if(localStorage.list) {
+    //set up an item so we can deal with our for loop
+    //creating an arbitrary loop starting at zero and incrementing up through the array
+    var item;
+    for (var x = 0; x < list.length; x++) {
+      item = document.createElement('li');
+      //stuff text into the li
+      //list to the x will have all of our text in it
+      item.appendChild(document.createTextNode(list[x]));
+
+      tasks.appendChild(item);
+    }
+  }
+}
+
+
+function render() {
+  save();
+  create();
+}
+
+load();
+
+btn.addEventListener('click', render);
+
+
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdown = document.getElementById('dropdown');
-      var dropdowns = document.getElementsByClassName('dropdown-content');
-      dropdown.textContent = Item.names;
-      dropdown.appendChild(dropdowns);
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
+
+
+
+
+
+
+
+// function dropdownMenu() {
+//   document.getElementById('myDropdown').classList.toggle('show');
+// }
+
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     var dropdown = document.getElementById('dropdown');
+//     var dropdowns = document.getElementsByClassName('dropdown-content');
+//     dropdown.textContent = Item.names;
+//     dropdown.appendChild(dropdowns);
+//     for (var i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// };
 
 
 
