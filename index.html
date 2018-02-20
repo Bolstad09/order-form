@@ -30,35 +30,33 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-            <div id="myDropdown" class="dropdown-content">
-            <img id="product1" src="">
-            <img id="product2" src="">
-            <img id="product3" src="">
-            </div>
-              <!-- <a href="">Link 1</a>
-              <a href="">Link 2</a>
-              <a href="">Link 3</a> -->
-            </div>
-          </div>
-    </section>
-    <main>
-      <div id="container">
-      <img id="product1" src="">
-      <img id="product2" src="">
-      <img id="product3" src="">
-    </div>
-    <div>
-        <p id="totals"></p>
-    </div>
-    <div>
-    <canvas id="chart" width="800" height="600"></canvas>
-    </div>
+    <form>
+    <select name="items" required>
+        <option selected disabled hidden>Click Here</option>
+        <option value="bag">Bag</option>
+        <option value="banana">banana</option>
+        <option value="bathroom">bathroom</option>
+        <option value="boots">boots</option>
+        <option value="breakfast">breakfast</option>
+        <option value="bubblegum">bubblegum</option>
+        <option value="chair">chair</option>
+        <option value="cthulhu">cthulhu</option>
+        <option value="dog-duck">dog-duck</option>
+        <option value="dragon">dragon</option>
+        <option value="pen">pen</option>
+        <option value="pet-sweep">pet-sweep</option>
+        <option value="tauntaun">tauntaun</option>
+        <option value="unicorn">unicorn</option>
+        <option value="usb">usb</option>
+        <option value="water-can">water-can</option>
+        <option value="wine-glass">wine-glass</option>
+    </select>
+    <input type="number" name="count" required>
+    <input type="submit" value="Add to Cart">
+    </form>
+    
+
+
     <script type="text/javascript" src="app.js"></script>
   </body>
-</html>
-</main>
-</body>
 </html>

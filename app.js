@@ -1,30 +1,27 @@
 'use strict';
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-Item.names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
-// function Item(name) {
-//   this.name = name;
 
-function myFunction() {
-  document.getElementById('myDropdown').classList.toggle('show');
+function retrieveCart(event){
+  event.target.name === 'count'
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdown = document.getElementById('dropdown');
-      var dropdowns = document.getElementsByClassName('dropdown-content');
-      dropdown.textContent = Item.names;
-      dropdown.appendChild(dropdowns);
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
+
+function addToCart(event){
+var jsonCart = localStorage.getItem('shoppingcart');
+var cart = JSON.parse(jsonCart);
+cart.push({
+  name:'',
+  quantity:0
+});
+jsonCart = JSON.stringify(cart);
+localStorage.setItem('shoppingcart', jsonCart);  
+}
+
+
+
+function parse(text){
+
+}
 
 
 
