@@ -29,4 +29,9 @@ function removeFromCart(event){
   localStorage.setItem('shoppingcart', JSON.stringify(items));
   getImageFiles();
 }
+function processOrder(){
+  var deleteAll = 
+  deleteAll.addEventListener('click', processOrder);
+}
+
 

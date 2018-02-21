@@ -39,7 +39,7 @@
           <input name="name" type="text" />
         </li>
         <li>
-          <label it="street" for="street">Street Address</label>
+          <label it="street" for="street">Street Address:</label>
           <input name="street" type="text" />
         </li>
         <li>
@@ -60,18 +60,17 @@
         </li>
         <li>
           <label id = "credit" for="creditCard">Credit Card #:</label>
-          <input id="creditCard" name="creditCard" type="number"/>
+          <input class="required" id="field" type="text" maxlength="16" pattern="([0-9]|[0-9]|[0-9])" name="creditcard"/>
         </li>
     </ul>
     <ul>
         <li>
-          <button id="comment-buton" type="submit">Process Order</button>
+          <button id="processOrder" type="submit">Process Order</button>
           </li>
         </ul>
           </fieldset>
       </form>
   </section>
   <script type="text/javascript" src="cart.js"></script>
-  <button id="delete">Delete All Items</button>
 </body>
 </html>
