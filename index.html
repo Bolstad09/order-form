@@ -6,7 +6,7 @@
     <title>Order Form</title>
     <link rel="stylesheet" type="text/css" href="reset.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script> -->
 </head>
 
 <body>
@@ -34,12 +34,14 @@
 
 
     <form>
-        <h1>Shop!</h1>
         <fieldset>
             <select id = "dropDown">
             </select>
-            <input type = "button" value = "Add"/>
+            <button id="btn">Add to cart!</button>
+            <!-- <input type = "button" value = "Add"/> -->
         </fieldset>
+        <input type="number" name="count" required>
+        <input type="submit" value="Add to Cart">
     </form>
 
     <h1>todo app</h1>
@@ -47,13 +49,16 @@
         <section>
             <!-- just a single input so don't need a prevent default -->
             <input type="text" id="item" placeholder="please enter a task">
-            <button id="btn">add task!</button>
+            <!-- <button id="btn">Add to cart!</button> -->
         </section>
 
     
         <ul id="tasks"><!-- tasks go here --></ul>
    
-   
+<!--    
+    <script type="text/javascript" src="cart.js"></script> -->
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
+
+

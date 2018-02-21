@@ -5,6 +5,7 @@ var btn = document.getElementById('btn');
 var input = document.getElementById('item');
 var tasks = document.getElementById('tasks');
 var dropDown = document.getElementById('dropDown');
+var inCart = document.getElementById('inCart');
 
 var allpictures = [];
 
@@ -85,6 +86,10 @@ btn.addEventListener('click', render);
 
 
 
+// function addToCart() {
+//   var add = 
+// }
+
 
 
 function dropDownList() {
@@ -96,3 +101,5 @@ function dropDownList() {
 }
 
 dropDownList();
+
+
