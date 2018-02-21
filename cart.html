@@ -5,6 +5,7 @@
     <title>Bus-Mall</title>
     <link rel="stylesheet" type="text/css" href="reset.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 </head>
 <body>
   <header>
@@ -31,22 +32,42 @@
   <div id="cartlist">
   <section>
           <fieldset>
-              <legend>Add Store Location</legend>
-          <label for="name">Name:</label>
+              <legend class ="storeLocation">Add Store Location</legend>
+              <ul class ="inputs">
+                  <li>
+          <label id ="name" for="name">Name:</label>
           <input name="name" type="text" />
-          <label for="street">Street Address</label>
+        </li>
+        <li>
+          <label it="street" for="street">Street Address</label>
           <input name="street" type="text" />
-          <label for="city">City:</label>
+        </li>
+        <li>
+          <label id ="city" for="city">City:</label>
           <input name="city" type="text" />
-          <label for="state">State:</label>
+        </li>
+        <li>
+          <label id ="state" for="state">State:</label>
           <input name="state" type="text" />
-          <label for="zip">Zip Code</label>
+        </li>
+        <li>
+          <label id="zip" for="zip">Zip Code</label>
           <input name="zip" type="text" />
-          <label for="phone">Phone Number:</label>
+        </li>
+        <li>
+          <label id ="phone" for="phone">Phone Number:</label>
           <input name="phone" type="text" />
-          <label for="creditCard">Credit Card #:</label>
-          <input name="creditCard" type="text" length= 16/>
+        </li>
+        <li>
+          <label id = "credit" for="creditCard">Credit Card #:</label>
+          <input id="creditCard" name="creditCard" type="number"/>
+        </li>
+    </ul>
+    <ul>
+        <li>
           <button id="comment-buton" type="submit">Process Order</button>
+          </li>
+        </ul>
           </fieldset>
       </form>
   </section>
