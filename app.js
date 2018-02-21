@@ -36,7 +36,9 @@ console.log('check if it works');
 }
 bootStrapApplication();
 
-
+//need 17img
+//create function that gets local storage array JSON.parse
+//go through all 17image objects and get the ones that have the same name as your objects in local storage
 
 
 
