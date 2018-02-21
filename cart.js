@@ -15,12 +15,10 @@ function getImageFiles(){
     formTag.appendChild(deleteTag);
     imgListTag.appendChild(formTag);
   }
-  
 }
 window.onload = function(){
   getImageFiles();
-      
-}
+};
 
 
 
