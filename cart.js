@@ -20,8 +20,6 @@ window.onload = function(){
   getImageFiles();
 };
 
-
-
 function removeFromCart(event){
 
   var items = JSON.parse(localStorage.getItem('shoppingcart'));
@@ -31,3 +29,4 @@ function removeFromCart(event){
   localStorage.setItem('shoppingcart', JSON.stringify(items));
   getImageFiles();
 }
+

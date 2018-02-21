@@ -27,7 +27,6 @@ function addToCart(event){
   }
 
 }
-
 function bootStrapApplication(){
   var submitForm = document.getElementById('submitform');
   submitForm.addEventListener('submit', addToCart);
