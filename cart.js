@@ -9,7 +9,9 @@ function getImageFiles(){
     imgTag.src = 'img/' + cart[i].name + '.jpg';
     var deleteTag = document.createElement('input');
     deleteTag.type='submit';
-    deleteTag.value = cart[i].name;
+    deleteTag.value = 'delete';
+    deleteTag.name = cart[i].name;
+    //deleteTag.innerHTML = 'delete';
     deleteTag.addEventListener('click', removeFromCart);
     formTag.appendChild(imgTag);
     formTag.appendChild(deleteTag);
@@ -23,9 +25,15 @@ window.onload = function(){
 function removeFromCart(event){
 
   var items = JSON.parse(localStorage.getItem('shoppingcart'));
-  items = items.filter(function(item){
-    return item.name !== event.target.value;
+  
+  var removeIndex = items.findIndex(function(item){
+    return item.name === event.target.name;
   });
+  items.splice(removeIndex, 1);
+  /*
+  items = items.filter(function(item){
+    return item.name !== event.target.name;
+  });*/
   localStorage.setItem('shoppingcart', JSON.stringify(items));
   getImageFiles();
 }
