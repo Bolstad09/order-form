@@ -1,31 +1,44 @@
 'use strict';
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-Item.names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
-// function Item(name) {
-//   this.name = name;
+//local storage
+function addToCart(event){
+  event.preventDefault();
+  console.log('i invoked');
+  console.log(event.target);
+  var cart;
+  if(!localStorage.getItem('shoppingcart')){
+    cart = [];
+    cart.push({
+     name: event.target.items.value,
+     quanitity: event.target.count.value 
+    });
+    localStorage.setItem('shoppingcart', JSON.stringify(cart));
+  }else{
+    var jsonCart = localStorage.getItem('shoppingcart');
+    console.log(jsonCart);
+    cart = JSON.parse(jsonCart);
+    cart.push({
+      name: event.target.items.value,
+      quantity: event.target.count.value
+    });
+    jsonCart = JSON.stringify(cart);
+    localStorage.setItem('shoppingcart', jsonCart);  
+  }
 
-function myFunction() {
-  document.getElementById('myDropdown').classList.toggle('show');
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdown = document.getElementById('dropdown');
-      var dropdowns = document.getElementsByClassName('dropdown-content');
-      dropdown.textContent = Item.names;
-      dropdown.appendChild(dropdowns);
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
 
+
+function bootStrapApplication(){
+var submitForm = document.getElementById('submitform');
+submitForm.addEventListener('submit', addToCart);
+console.log('check if it works');
+}
+bootStrapApplication();
+
+//need 17img
+//create function that gets local storage array JSON.parse
+//go through all 17image objects and get the ones that have the same name as your objects in local storage
 
 
 
